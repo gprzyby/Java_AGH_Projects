@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane gridLinesVisible="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="300" minWidth="450" prefHeight="550.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.MainFrameController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints />
+    <RowConstraints maxHeight="532.0" minHeight="10.0" percentHeight="85.0" prefHeight="532.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="129.0" minHeight="-Infinity" prefHeight="18.0" valignment="CENTER" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Button fx:id="buttonAddingTask" mnemonicParsing="false" onAction="#addingTaskAction" text="Add new task" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+      <MenuBar>
+        <menus>
+          <Menu fx:id="closeMenu" mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" onAction="#exitMenuItemAction" text="Exit" />
+               </items></Menu>
+          <Menu fx:id="aboutMenu" mnemonicParsing="false" text="About">
+               <items>
+                  <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" onAction="#aboutMenuItemAction" text="About App" />
+               </items></Menu>
+        </menus>
+      </MenuBar>
+      <GridPane GridPane.rowIndex="1">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TitledPane alignment="CENTER" animated="false" collapsible="false" layoutX="10.0" layoutY="69.0" text="IN PROGRESS" GridPane.columnIndex="1" GridPane.valignment="TOP">
+               <content>
+                  <ListView fx:id="listInProgress" />
+               </content>
+            </TitledPane>
+            <TitledPane alignment="CENTER" animated="false" collapsible="false" layoutX="210.0" layoutY="69.0" text="DONE" GridPane.columnIndex="2" GridPane.valignment="TOP">
+               <content>
+                  <ListView fx:id="listDone" />
+               </content>
+            </TitledPane>
+            <TitledPane alignment="CENTER" animated="false" collapsible="false" text="TO DO" GridPane.valignment="TOP">
+               <content>
+                  <ListView fx:id="listToDo" />
+               </content>
+            </TitledPane>
+         </children>
+      </GridPane>
+   </children>
+</GridPane>
